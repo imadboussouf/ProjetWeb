@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>   
+    
+</head>
+<body>
+     
+  <ul class="list-group">
+  
+    	
+  <li class="list-group-item list-group-item-success" th:each="favoris : ${favoris}">
+    
+  <span th:text="${favoris.nom}"></span>
+   	<span th:text="${favoris.adresse}"></span>
+   	<span th:text="${favoris.categorie}"></span>
+    <span><a th:href="@{/edit(id=${favoris.id})}">edit</a></span>
+    <span><a th:href="@{/delete(id=${favoris.id})}">delete</a></span> 
+</li>
+    </ul>
+ <a href="/create">Ajouter un autre favoris</a>
+</body>
+</html>

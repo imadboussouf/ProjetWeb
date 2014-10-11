@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>favoris</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>   
+</head>
+<body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+    <div class="container" th:switch="${favoris.id}">
+    <form class="form-signin" role="form" action="#" th:object="${favoris}" method="post">
+  	  <h1 class="form-signin-heading" th:case="-1">Creation de url favoris</h1>
+	  <h1 class="form-signin-heading" th:case="*">Editer le favoris</h1>
+	  <span class="input-group-addon">Remplir les favoris</span>
+        <input class="form-control" type="text" autofocus="" required="" placeholder="Nom" th:field="*{nom}"></input>
+        <input class="form-control" type="text" required="" placeholder="Url" th:field="*{adresse}"></input>
+          <input class="form-control" type="text" required="" placeholder="tag" th:field="*{categorie}"></input>
+    
+       
+  <button class="btn btn-danger" type="submit" value="Submit">ajouter</button>
+        <button class="btn btn-success" type="actualiser" value="Reset">
+            Reset </button>
+    </form>
+</div>
+
+
+
+
+</body>
+</html>
